@@ -50,7 +50,7 @@ def Search(Item):
     cur_pointer = FirstNode
     while cur_pointer != 1:
         if LinkedList[cur_pointer][0] == Item:
-            return LinkedList[cur_pointer][0]
+            return LinkedList[cur_pointer][1]
         cur_pointer = LinkedList[cur_pointer][1]
     return -1
     pass
