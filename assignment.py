@@ -1,5 +1,6 @@
 # You can remove 'pass' if you written code in the function
 # Each node is a list: [Data, Pointer]. A pointer of -1 means "points to nothing".
+from os.path import curdir
 from pickle import GLOBAL
 
 # Exercise 1
@@ -58,18 +59,36 @@ def Search(Item):
 
 def CountNodes():
     # Write your code here
+    global LinkedList, FirstNode
+    cur_pointer = FirstNode
+    count = 0
+    while cur_pointer != -1:
+        count += 1
+        cur_pointer = LinkedList[cur_pointer][1]
+    return count
     pass
 
 
 # Exercise 4
 def InsertFront(Item):
     # Write your code here
+    global LinkedList, FirstNode, FirstEmpty
+    cur_pointer = FirstNode
+    if IsFull():
+        NewNode = FirstEmpty
+        FirstEmpty = LinkedList[NewNode][1]
+        LinkedList[NewNode][0] = Item
+        LinkedList[NewNode][1] = FirstNode
+        FirstNode = NewNode
+        return True
+    return False
     pass
 
 
 # Exercise 5
 def InsertEnd(Item):
     # Write your code here
+
     pass
 
 
