@@ -48,9 +48,9 @@ def Search(Item):
     # Write your code here
     global LinkedList, FirstNode, FirstEmpty
     cur_pointer = FirstNode
-    while cur_pointer != 1:
+    while cur_pointer != -1:
         if LinkedList[cur_pointer][0] == Item:
-            return LinkedList[cur_pointer][1]
+            return cur_pointer
         cur_pointer = LinkedList[cur_pointer][1]
     return -1
     pass
