@@ -37,7 +37,10 @@ def Traverse():
     cur_pointer = FirstNode
     output = ""
     while cur_pointer != -1:
-        output = output + ", " + str(LinkedList[cur_pointer][0])
+        if output=="":
+            output=str(LinkedList[cur_pointer][0])
+        else:
+            output = output + ", " + str(LinkedList[cur_pointer][0])
         cur_pointer=LinkedList[cur_pointer][1]
     return output
     pass
