@@ -73,8 +73,7 @@ def CountNodes():
 def InsertFront(Item):
     # Write your code here
     global LinkedList, FirstNode, FirstEmpty
-    cur_pointer = FirstNode
-    if IsFull():
+    if IsFull() == False:
         NewNode = FirstEmpty
         FirstEmpty = LinkedList[NewNode][1]
         LinkedList[NewNode][0] = Item
