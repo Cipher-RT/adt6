@@ -38,7 +38,7 @@ def Traverse():
     output = []
     while cur_pointer != -1:
         output.append(LinkedList[cur_pointer][0])
-        cur_pointer=LinkedList[cur_pointer][1]
+        cur_pointer = LinkedList[cur_pointer][1]
     return output
     pass
 
@@ -46,6 +46,13 @@ def Traverse():
 # Exercise 3
 def Search(Item):
     # Write your code here
+    global LinkedList, FirstNode, FirstEmpty
+    cur_pointer = FirstNode
+    while cur_pointer != 1:
+        if LinkedList[cur_pointer][0] == Item:
+            return LinkedList[cur_pointer][0]
+        cur_pointer = LinkedList[cur_pointer][1]
+    return -1
     pass
 
 
