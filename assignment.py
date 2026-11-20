@@ -87,7 +87,7 @@ def InsertFront(Item):
 # Exercise 5
 def InsertEnd(Item):
     # Write your code here
-    global LinkedLis, FirstNode, FirstEmpty
+    global LinkedList, FirstNode, FirstEmpty
     if IsFull() == False:
         NewNode = FirstEmpty
         FirstEmpty = LinkedList[NewNode][1]
@@ -108,4 +108,22 @@ def InsertEnd(Item):
 # Exercise 6
 def Delete(Item):
     # Write your code here
+    global LinkedList, FirstNode, FirstEmpty
+    if IsEmpty() == False:
+        cur_pointer=FirstNode
+        prev_pointer=-1
+        while cur_pointer!=-1 and LinkedList[cur_pointer][0]!=Item:
+            prev_pointer=cur_pointer
+            cur_pointer=LinkedList[cur_pointer][1]
+        if cur_pointer==-1:
+            return False
+        if prev_pointer==-1:
+            FirstNode= LinkedList[cur_pointer][1]
+        else:
+            LinkedList[prev_pointer][1]=LinkedList[cur_pointer][1]
+        LinkedList[cur_pointer][0]=-1
+        LinkedList[cur_pointer][1]=FirstEmpty
+        FirstEmpty=cur_pointer
+        return True
+    return False
     pass
